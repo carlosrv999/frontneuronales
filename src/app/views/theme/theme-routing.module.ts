@@ -8,21 +8,21 @@ const routes: Routes = [
   {
     path: '',
     data: {
-      title: 'Theme'
+      title: 'Home'
     },
     children: [
       {
-        path: 'colors',
+        path: 'predecir',
         component: ColorsComponent,
         data: {
-          title: 'Colors'
+          title: 'Predecir'
         }
       },
       {
-        path: 'typography',
+        path: 'pesos',
         component: TypographyComponent,
         data: {
-          title: 'Typography'
+          title: 'Configurar Pesos'
         }
       }
     ]

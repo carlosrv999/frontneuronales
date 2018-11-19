@@ -154,11 +154,9 @@
         </div>
       </div>
       <div class="card-footer">
-        <button type="submit" class="btn btn-sm btn-primary">
-          <i class="fa fa-dot-circle-o"></i> Predecir</button>
-
+        <button type="submit" [disabled]="loading" class="btn btn-sm btn-primary">
+          <i class="fa" [ngClass]="{ 'fa-spinner fa-spin' : loading, 'fa-dot-circle-o': !loading }"></i> Predecir</button>
       </div>
     </form>
   </div>
-
 </div>

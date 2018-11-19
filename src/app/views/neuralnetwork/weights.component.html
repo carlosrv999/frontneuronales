@@ -1,0 +1,14 @@
+<div class="animated fadeIn">
+  <div class="card">
+    <div class="card-header">
+      <i class="icon-drop"></i> Configurar Pesos
+    </div>
+    <div class="card-body">
+      <h4 *ngIf="uploadService.file" mat-line>{{ uploadService.file.name }}</h4>
+      <button mat-raised-button (click)="openUploadDialog()" [disabled]="uploadService.file">Upload</button>
+      <button *ngIf="uploadService.file" mat-raised-button (click)="confirm()">Confirm</button>
+    </div>
+  </div>
+
+
+</div>

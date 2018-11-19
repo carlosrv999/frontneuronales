@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { ColorsComponent } from './colors.component';
-import { TypographyComponent } from './typography.component';
+import { PredictComponent } from './predict.component';
+import { WeightsComponent } from './weights.component';
 
 const routes: Routes = [
   {
@@ -13,14 +13,14 @@ const routes: Routes = [
     children: [
       {
         path: 'predecir',
-        component: ColorsComponent,
+        component: PredictComponent,
         data: {
           title: 'Predecir'
         }
       },
       {
         path: 'pesos',
-        component: TypographyComponent,
+        component: WeightsComponent,
         data: {
           title: 'Configurar Pesos'
         }
@@ -33,4 +33,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ThemeRoutingModule {}
+export class NeuralNetworkRoutingModule {}

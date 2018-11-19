@@ -76,7 +76,7 @@ export const routes: Routes = [
       },
       {
         path: 'redes',
-        loadChildren: './views/theme/theme.module#ThemeModule'
+        loadChildren: './views/neuralnetwork/neuralnetwork.module#NeuralNetworkModule'
       },
       {
         path: 'widgets',

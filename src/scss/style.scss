@@ -1,6 +1,8 @@
 // If you want to override variables do it here
 @import "variables";
 
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
 // Import styles
 @import "~@coreui/coreui/scss/coreui";
 

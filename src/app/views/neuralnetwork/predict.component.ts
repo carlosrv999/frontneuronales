@@ -6,10 +6,10 @@ import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
 import { BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({
-  templateUrl: 'colors.component.html',
+  templateUrl: 'predict.component.html',
   styleUrls: ['loading.css']
 })
-export class ColorsComponent implements OnInit {
+export class PredictComponent implements OnInit {
   bsModalRef: BsModalRef;
 
   // barChart
@@ -165,6 +165,5 @@ export class ModalContentComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    console.log("se cerro xd");
   }
 }

@@ -67,7 +67,7 @@ export class ColorsComponent implements OnInit {
     });
   }
 
-  submitForm(template: TemplateRef<any>) {
+  submitForm() {
     this.loading = !this.loading;
     this.api.getApi(this.formgroup.value).subscribe(
       (res: any) => {
@@ -97,7 +97,6 @@ export class ColorsComponent implements OnInit {
             'Do something else',
             '...'
           ],
-          title: 'Modal with component'
         };
         this.bsModalRef = this.modalService.show(ModalContentComponent, { initialState });
         this.bsModalRef.content.closeBtnName = 'Close';
@@ -124,7 +123,7 @@ export class ColorsComponent implements OnInit {
   selector: 'modal-content',
   template: `
     <div class="modal-header">
-      <h4 class="modal-title pull-left">{{title}}</h4>
+      <h4 class="modal-title pull-left">Resultados</h4>
       <button type="button" class="close pull-right" aria-label="Close" (click)="bsModalRef.hide()">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -141,9 +140,7 @@ export class ColorsComponent implements OnInit {
             [labels]="barChartLabels"
             [options]="barChartOptions"
             [legend]="barChartLegend"
-            [chartType]="barChartType"
-            (chartHover)="chartHovered($event)"
-            (chartClick)="chartClicked($event)"></canvas>
+            [chartType]="barChartType"></canvas>
           </div>
         </div>
       </div>

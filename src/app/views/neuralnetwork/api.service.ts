@@ -3,13 +3,15 @@ import { HttpClient } from "@angular/common/http";
 
 @Injectable()
 export class ApiService {
+
+  urlapi = "200.60.68.125";
   constructor(private http: HttpClient) { }
 
   getApi (params: any) {
-    return this.http.get(`http://localhost:3000/calcularPesos?area=${params.area}&riesgo_deslizamiento=${params.riesgo_deslizamiento}&riesgo_inundacion=${params.riesgo_inundacion}&mov_masas=${params.mov_masas}&inundacion=${params.inundacion}&infra_niv_i=${params.infra_niv_i}&infra_niv_ii=${params.infra_niv_ii}&infra_niv_iii=${params.infra_niv_iii}`);
+    return this.http.get(`http://${this.urlapi}:3000/calcularPesos?area=${params.area}&riesgo_deslizamiento=${params.riesgo_deslizamiento}&riesgo_inundacion=${params.riesgo_inundacion}&mov_masas=${params.mov_masas}&inundacion=${params.inundacion}&infra_niv_i=${params.infra_niv_i}&infra_niv_ii=${params.infra_niv_ii}&infra_niv_iii=${params.infra_niv_iii}`);
   }
 
   confirm() {
-    return this.http.post(`http://localhost:3000/confirmar`, {});
+    return this.http.post(`http://${this.urlapi}:3000/confirmar`, {});
   }
 }

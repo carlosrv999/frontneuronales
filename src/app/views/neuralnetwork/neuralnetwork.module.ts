@@ -9,7 +9,7 @@ import { MatButtonModule, MatDialogModule, MatListModule, MatProgressBarModule }
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { PredictComponent, ModalContentComponent } from './predict.component';
-import { WeightsComponent } from './weights.component';
+import { WeightsComponent, ModalConfirmComponent } from './weights.component';
 
 // Theme Routing
 import { NeuralNetworkRoutingModule } from './neuralnetwork-routing.module';
@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ApiService } from './api.service';
 import { DialogComponent } from './dialog.component';
 import { UploadService } from './upload.service';
+import { AlertModule } from 'ngx-bootstrap/alert';
 
 @NgModule({
   imports: [
@@ -30,16 +31,19 @@ import { UploadService } from './upload.service';
     ReactiveFormsModule,
     ChartsModule,
     ModalModule.forRoot(),
+    AlertModule.forRoot(),
     HttpClientModule
   ],
   entryComponents: [
     ModalContentComponent,
+    ModalConfirmComponent,
     DialogComponent
   ],
   declarations: [
     PredictComponent,
     WeightsComponent,
     DialogComponent,
+    ModalConfirmComponent,
     ModalContentComponent
   ],
   providers: [

@@ -7,6 +7,8 @@ const url = 'http://200.60.68.125:3000/upload';
 
 @Injectable()
 export class UploadService {
+  success = false;
+  failed = false;
   public file: File = null;
   uploadFailed = false;
 

@@ -1,9 +1,9 @@
 <input type="file" #file style="display: none" (change)="onFilesAdded()" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"/>
 <div class="container" fxLayout="column" fxLayoutAlign="space-evenly stretch">
-    <h1 mat-dialog-title>Upload Files</h1>
+    <h1 mat-dialog-title>Subir Excel</h1>
     <div>
       <button [disabled]="uploading || uploadSuccessful || files.size == 1" mat-raised-button color="primary" class="add-files-btn" (click)="addFiles()">
-        Add Files
+        Agregar archivo
       </button>
     </div>
   
@@ -19,8 +19,8 @@
   
     <!-- This are the actions of the dialog, containing the primary and the cancel button-->
     <mat-dialog-actions class="actions">
-      <button *ngIf="showCancelButton" mat-button mat-dialog-close>Cancel</button>
-      <button *ngIf="uploadService.uploadFailed" mat-button mat-dialog-close (click)="closing()">Close</button>
+      <button *ngIf="showCancelButton" mat-button mat-dialog-close>Cancelar</button>
+      <button *ngIf="uploadService.uploadFailed" mat-button mat-dialog-close (click)="closing()">Cerrar</button>
       <button mat-raised-button color="primary" [disabled]="!canBeClosed" (click)="closeDialog()">{{primaryButtonText}}</button>
     </mat-dialog-actions>
   </div>

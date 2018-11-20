@@ -14,7 +14,7 @@ export class DialogComponent implements OnInit {
 
   progress;
   canBeClosed = true;
-  primaryButtonText = 'Upload';
+  primaryButtonText = 'Subir';
   showCancelButton = true;
   uploading = false;
   uploadSuccessful = false;

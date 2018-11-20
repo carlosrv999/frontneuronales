@@ -2,7 +2,7 @@ import { Component, OnInit, TemplateRef, OnDestroy } from '@angular/core';
 import { getStyle, rgbToHex } from '@coreui/coreui/dist/js/coreui-utilities';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from './api.service';
-import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+import { BsModalRef } from 'ngx-bootstrap/modal';
 import { BsModalService } from 'ngx-bootstrap/modal';
 
 @Component({

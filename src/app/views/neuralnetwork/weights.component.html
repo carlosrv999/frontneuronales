@@ -4,9 +4,28 @@
       <i class="icon-drop"></i> Configurar Pesos
     </div>
     <div class="card-body">
+      <div class="card-body" style="color:#a8a8a8; font-size: 14pt">
+        Debe subir un archivo Excel, el cual debe tener un formato en específico. Si aún no tiene este formato, puede descargarlo
+        dando clic
+        <a href="http://200.60.68.125:3000/public/formato_pesos.xlsx">aquí</a>. Reemplace cada peso de cada neurona de la red, la cual tiene 10 neuronas en la capa oculta + 1 bias, y
+        una capa de salida de 4 neuronas.
+        <span style="color: #ff8e8e"> Tenga cuidado al actualizar los pesos, ya que los anteriores serán sobreescritos</span>
+      </div>
       <h4 *ngIf="uploadService.file" mat-line>{{ uploadService.file.name }}</h4>
-      <button mat-raised-button (click)="openUploadDialog()" [disabled]="uploadService.file">Upload</button>
-      <button *ngIf="uploadService.file" mat-raised-button (click)="confirm()">Confirm</button>
+      <button mat-raised-button (click)="openUploadDialog()" [disabled]="uploadService.file">Subir Excel</button>
+      <button *ngIf="uploadService.file" mat-raised-button style="background-color:red;" (click)="confirm()">
+        <b style="color: white">Confirmar Subida</b>
+      </button>
+      <div style="margin-top: 10px" *ngIf="uploadService.success">
+        <alert type="success">
+          <strong>¡Éxito!</strong> El archivo fue subido exitosamente
+        </alert>
+      </div>
+      <div style="margin-top: 10px" *ngIf="uploadService.failed">
+        <alert type="danger">
+          <strong>Error</strong> Falló en subir el archivo
+        </alert>
+      </div>
     </div>
   </div>
 

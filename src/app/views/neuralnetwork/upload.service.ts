@@ -8,6 +8,7 @@ const url = 'http://localhost:3000/upload';
 @Injectable()
 export class UploadService {
   public file: File = null;
+  uploadFailed = false;
 
   constructor(private http: HttpClient) { }
 
@@ -37,12 +38,17 @@ export class UploadService {
           // pass the percentage into the progress-stream
           progress.next(percentDone);
         } else if (event instanceof HttpResponse) {
-
+          console.log("ha ocurrido un edsadsa")
+          console.log(event);
+          if (event.body["correct"]) {
+            console.log("correct");
+            progress.complete();
+            console.log(event.body);
+            this.file = file;
+          } else {console.log("incorrecct"); this.uploadFailed = true;}
           // Close the progress-stream if we get an answer form the API
           // The upload is complete
-          progress.complete();
-          console.log(event.body);
-          this.file = file;
+
         }
       });
 
